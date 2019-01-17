@@ -58,3 +58,8 @@ ProtocolMethodList >> resetSelection [
 ProtocolMethodList >> title [ 
 	^ 'Protocol widget'
 ]
+
+{ #category : #'events-shortcuts' }
+ProtocolMethodList >> whenSelectedItemChanged: aBlock [
+	methods whenSelectedItemChanged: aBlock
+]
