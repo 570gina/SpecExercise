@@ -1,6 +1,6 @@
 Class {
 	#name : #RegisteredColorsList,
-	#superclass : #ListModel,
+	#superclass : #ListPresenter,
 	#category : #'Spec-BuildUIWithSpec'
 }
 

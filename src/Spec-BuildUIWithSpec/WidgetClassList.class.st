@@ -1,6 +1,6 @@
 Class {
 	#name : #WidgetClassList,
-	#superclass : #ComposableModel,
+	#superclass : #ComposablePresenter,
 	#instVars : [
 		'list'
 	],
@@ -17,7 +17,7 @@ WidgetClassList class >> defaultSpec [
 { #category : #initialization }
 WidgetClassList >> initializeWidgets [
 	list := self newList.
-	list items: (ComposablePresenter allSubclasses
+	list items: (AbstractWidgetPresenter allSubclasses
 	sorted: [:a :b | a name < b name ]).
 	self focusOrder add: list.
 

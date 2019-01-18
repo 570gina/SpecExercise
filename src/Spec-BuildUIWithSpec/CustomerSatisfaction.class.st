@@ -1,6 +1,6 @@
 Class {
 	#name : #CustomerSatisfaction,
-	#superclass : #ComposableModel,
+	#superclass : #ComposablePresenter,
 	#instVars : [
 		'buttonHappy',
 		'buttonNeutral',

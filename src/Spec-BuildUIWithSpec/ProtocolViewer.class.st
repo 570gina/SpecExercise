@@ -1,6 +1,6 @@
 Class {
 	#name : #ProtocolViewer,
-	#superclass : #ComposableModel,
+	#superclass : #ComposablePresenter,
 	#instVars : [
 		'models',
 		'api',

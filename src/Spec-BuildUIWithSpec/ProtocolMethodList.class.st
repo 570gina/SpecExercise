@@ -1,6 +1,6 @@
 Class {
 	#name : #ProtocolMethodList,
-	#superclass : #ComposableModel,
+	#superclass : #ComposablePresenter,
 	#instVars : [
 		'label',
 		'methods'

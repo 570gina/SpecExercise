@@ -1,6 +1,6 @@
 Class {
 	#name : #ProtocolBrowser,
-	#superclass : #ComposableModel,
+	#superclass : #ComposablePresenter,
 	#instVars : [
 		'text',
 		'viewer'
@@ -42,6 +42,7 @@ ProtocolBrowser >> initializeWidgets [
 	self focusOrder 
 		add: viewer;
 		add: text.
+	
 ]
 
 { #category : #acccessing }
