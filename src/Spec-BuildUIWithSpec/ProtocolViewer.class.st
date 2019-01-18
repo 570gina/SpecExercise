@@ -68,3 +68,20 @@ ProtocolViewer >> models [
 ProtocolViewer >> title [ 
 	^'Protocol viwer'
 ]
+
+{ #category : #'events-shortcuts' }
+ProtocolViewer >> whenAPIChanged: aBlock [
+	api whenSelectedItemChanged: aBlock
+]
+
+{ #category : #'events-shortcuts' }
+ProtocolViewer >> whenClassChanged: aBlock [
+	models whenSelectedItemChanged: aBlock
+
+]
+
+{ #category : #'events-shortcuts' }
+ProtocolViewer >> whenEventChanged: aBlock [
+	events whenSelectedItemChanged: aBlock
+
+]
