@@ -34,7 +34,7 @@ ProtocolBrowser >> initializePresenter [
 
 { #category : #initialization }
 ProtocolBrowser >> initializeWidgets [ 
-	text := self instantiate: TextModel.
+	text := self instantiate: TextPresenter.
 	viewer := self instantiate: ProtocolViewer.
 	text
 		aboutToStyle: true;
