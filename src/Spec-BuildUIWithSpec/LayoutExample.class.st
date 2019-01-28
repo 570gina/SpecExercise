@@ -11,24 +11,6 @@ Class {
 }
 
 { #category : #specs }
-LayoutExample class >> OneButtonSmaller [
-	^SpecLayout composed
-		add: #button1 origin: (0.25@0.25) corner:(0.75@0.75);
-		yourself
-]
-
-{ #category : #specs }
-LayoutExample class >> TwoButtonsRelativeOffset [
-	^SpecLayout composed
-		add: #button1 origin: (0@0) corner:(1@0.5)
-				offsetOrigin: (10@10) offsetCorner:(-10@ -5);
-		add: #button2 origin: (0@0.5) corner:(1@1)
-				offsetOrigin: (10@5) offsetCorner: (-10@ -10);
-				yourself
-				
-]
-
-{ #category : #specs }
 LayoutExample class >> columnOf50 [
 	^SpecLayout composed 
 		newColumn: [ :col | col add: #text; add: #button1] width: 50;
@@ -67,6 +49,13 @@ LayoutExample class >> nestingTB [
 LayoutExample class >> oneButtonAbsolute [
 	^SpecLayout composed
 		add: #button1 top: 10 bottom: 200 left: 10 right: 10;
+		yourself
+]
+
+{ #category : #specs }
+LayoutExample class >> oneButtonSmaller [
+	^SpecLayout composed
+		add: #button1 origin: (0.25@0.25) corner:(0.75@0.75);
 		yourself
 ]
 
@@ -122,6 +111,17 @@ LayoutExample class >> rowOf30 [
 	^SpecLayout composed 
 		newRow: [ :row | row add: #text; add: #button1] height: 30;
 		yourself
+]
+
+{ #category : #specs }
+LayoutExample class >> twoButtonsRelativeOffset [
+	^SpecLayout composed
+		add: #button1 origin: (0@0) corner:(1@0.5)
+				offsetOrigin: (10@10) offsetCorner:(-10@ -5);
+		add: #button2 origin: (0@0.5) corner:(1@1)
+				offsetOrigin: (10@5) offsetCorner: (-10@ -10);
+				yourself
+				
 ]
 
 { #category : #specs }
