@@ -40,7 +40,7 @@ CustomerSatisfaction >> buttonNeutral [
 
 { #category : #api }
 CustomerSatisfaction >> extent [
-^400@100
+	^400@100
 
 ]
 

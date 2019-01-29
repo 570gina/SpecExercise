@@ -149,14 +149,13 @@ LayoutExample >> initializeWidgets [
 	button2 := self newButton.
 	list := self newList.
 	text := self newText.
-	"text := self newTextInput. (Single-line input field)"
 	button1 label: 'I am a button.'.
 	button2 label: 'Me too!'.
-	
+
 	text autoAccept: true.
 	"text acceptBlock: [ :txt | GrowlMorph openWithContents: txt.]."
 	"Remove the yellow triangle, perform an action at each edit"
-	text bindKeyCombination: $i command toAction: [ self text inspect ].
+	text bindKeyCombination: $i command toAction: [ self text text inspect ].
 	"Keyboard shortcut"
 
 	
