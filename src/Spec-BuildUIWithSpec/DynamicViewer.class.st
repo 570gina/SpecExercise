@@ -121,9 +121,10 @@ DynamicViewer >> widgetFor: aDatum [
 		cm image: aDatum.
 		^ cm ].
 	aDatum isArray ifTrue: [
-		cm := self newList.
-		cm items: aDatum.
+		cm := DynamicArrayViewer on: aDatum.
+		cm owner: self. "needed because we do not use 'instantiate:'"
 		^ cm ].
+	
 	"default case"
 	cm := self newText.
 	cm text: aDatum asString.
