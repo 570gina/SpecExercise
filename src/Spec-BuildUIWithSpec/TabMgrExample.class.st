@@ -96,11 +96,29 @@ TabMgrExample >> populateMenu [
 		group addItem: [ :item | 
 			item name: 'Soft Reset';
 				action: [ status text: 'History: Wash '.	];
-				icon: (Smalltalk ui icons iconNamed: #exception) ].
+			   icon: (Smalltalk ui icons iconNamed: #exception) ].
 		group addItem: [ :item | 
 			item name: 'Hard Reset';
 				action: [ GrowlMorph openWithContents: 'Just pull the plug!' ];
-				icon: (Smalltalk ui icons iconNamed: #smallError) ]].	 
+				icon: (Smalltalk ui icons iconNamed: #smallError) ]].
+	
+	menu addGroup: [ :group | 
+		group addItem: [ :item | 
+			item name: 'Reveal this menu';
+				action: [ menu buildWithSpecAsPopup popUpInWorld ];
+				description: 'This entry exits to have a shortcut for this menu.';
+				shortcut: $r meta ].
+		group addItem: [ :item | 
+			item name: 'Status Info';
+				action: [ GrowlMorph openWithContents: tabmgr selectedTab label];
+				icon: (Smalltalk ui icons iconNamed: #help)] ].
+		
+	menu addGroup: [ :group |
+		group addItem: [ :item |
+			item name: 'Actions';
+				subMenu: submenu ]].
+	menu applyTo: self.
+	"method is sent to the menu, causing the shortcuts defined in it to be registered to the TabMgrExample widget."
 ]
 
 { #category : #accessing }
