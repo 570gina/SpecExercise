@@ -60,6 +60,23 @@ DynamicViewer >> extent [
 ]
 
 { #category : #initialization }
+DynamicViewer >> initializePresenter [
+	button action: [
+		state := (state = $v) ifTrue: [ $h ] ifFalse: [ $v ].
+		self needRebuild: false.
+		self buildWithSpecLayout: self currentSpec.
+	].
+	
+	list whenSelectedItemChanged: [ :new | 
+		view := self widgetFor: new.
+		self needRebuild: false.
+		self buildWithSpecLayout: self currentSpec
+	]
+
+"I think this is a bit wrong...check after"
+]
+
+{ #category : #initialization }
 DynamicViewer >> initializeWidgets [
 	list := self newList.
 	list displayBlock: [ :item | item printString contractTo: 15 ].
@@ -93,4 +110,24 @@ DynamicViewer >> title [
 { #category : #accessing }
 DynamicViewer >> view [ 
 	^view
+]
+
+{ #category : #methods }
+DynamicViewer >> widgetFor: aDatum [
+	| cm |
+	aDatum isNil ifTrue: [ ^ self defaultView ].
+	aDatum isForm ifTrue: [
+		cm := self newImage.
+		cm image: aDatum.
+		^ cm ].
+	aDatum isArray ifTrue: [
+		cm := self newList.
+		cm items: aDatum.
+		^ cm ].
+	"default case"
+	cm := self newText.
+	cm text: aDatum asString.
+	^cm	
+	"Will be modified later"
+
 ]
