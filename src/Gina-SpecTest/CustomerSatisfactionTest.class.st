@@ -1,7 +1,7 @@
 Class {
 	#name : #CustomerSatisfactionTest,
 	#superclass : #TestCase,
-	#category : #'Gina-Test'
+	#category : #'Gina-SpecTest'
 }
 
 { #category : #testing }

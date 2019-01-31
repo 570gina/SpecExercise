@@ -1,7 +1,7 @@
 Class {
 	#name : #ProtocolBrowserTest,
 	#superclass : #TestCase,
-	#category : #'Gina-Test'
+	#category : #'Gina-SpecTest'
 }
 
 { #category : #testing }
